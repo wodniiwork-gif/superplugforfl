@@ -6,9 +6,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Configure
-run: cmake -B build -A x64      - name: Build
+        run: cmake -B build -A x64
+      - name: Build
         run: cmake --build build --config Release
       - uses: actions/upload-artifact@v4
         with:
           name: MegaPlugin-VST3
+          path: build/MegaPlugin_artefacts/Release/VST3
           path: build/MegaPlugin_artefacts/Release/VST3
